@@ -15,6 +15,7 @@ class TestLoginUI:
             browser = p.chromium.launch(channel="chrome", headless=False)
             context = browser.new_context()
             page = context.new_page()
+            
             page.goto("https://opensource-demo.orangehrmlive.com/")
 
             # Assert the Login Header 
