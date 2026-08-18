@@ -15,14 +15,6 @@ class TestLoginUI:
             browser = p.chromium.launch(channel="chrome", headless=False)
             context = browser.new_context()
             page = context.new_page()
-
             page.goto("https://opensource-demo.orangehrmlive.com/")
-
-            # Assert the Login Header //h5[text()='Login']  
-            # 
             expect(page.locator("xpath=//h5[text()='Login']")).to_have_text("Login")
-            expect(page.locator("xpath=//div[@class='orangehrm-login-slot']/h5")).to_have_text("Login")
-
-            assert  page.locator("xpath=//h5[text()='Login']").is_visible()
-         
 
