@@ -19,6 +19,10 @@ class TestLoginUI:
             page.goto("https://opensource-demo.orangehrmlive.com/")
 
             # Assert the Login Header //h5[text()='Login']  
-            # //div[@class='orangehrm-login-slot']/h5
-            actual_header=page.locator("xpath=//h5[text()='Login'] ").inner_text()
-            assert  actual_header=="Login"
+            # 
+            expect(page.locator("xpath=//h5[text()='Login']")).to_have_text("Login")
+            expect(page.locator("xpath=//div[@class='orangehrm-login-slot']/h5")).to_have_text("Login")
+
+            assert  page.locator("xpath=//h5[text()='Login']").is_visible()
+         
+
