@@ -8,3 +8,7 @@ class TestLogin:
         page.locator("xpath=//button[normalize-space()='Login']").click()
         expect(page.locator(
             "xpath=//p[contains(normalize-space(),'Invalid')]")).to_have_text("Invalid credentials")
+
+    def test_valid_login(self,page: Page):
+        # valid login - Admin and admin123
+        # assert - Quick Launch  text

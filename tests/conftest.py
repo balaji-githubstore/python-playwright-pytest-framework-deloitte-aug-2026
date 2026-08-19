@@ -11,3 +11,4 @@ def page():
         page.goto("https://opensource-demo.orangehrmlive.com/")
         yield page
         browser.close()
+
