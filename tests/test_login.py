@@ -12,3 +12,4 @@ class TestLogin:
     def test_valid_login(self,page: Page):
         # valid login - Admin and admin123
         # assert - Quick Launch  text
+# will start at 11:35 AM IST
