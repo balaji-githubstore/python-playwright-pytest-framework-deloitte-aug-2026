@@ -18,5 +18,8 @@ class TestLogin:
         page.locator("xpath=//input[@name='username']").fill(username)
         page.locator("xpath=//input[@name='password']").fill(password)
         page.locator("xpath=//button[normalize-space()='Login']").click()
+
         expect(page.locator(
             "xpath=//p[text()='Quick Launch']")).to_have_text(expected_text)
+
+        
