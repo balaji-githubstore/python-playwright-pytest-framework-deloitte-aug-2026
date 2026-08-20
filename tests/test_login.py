@@ -5,7 +5,7 @@ from utilities.data_source import DataSource
 
 class TestLogin:
 
-    @pytest.mark.parametrize("username, password, expected_error", DataSource.data_invalid_login_csv)
+    @pytest.mark.parametrize("username, password, expected_error", DataSource.data_invalid_login_excel)
     def test_invalid_login(self, page: Page, username, password, expected_error):
         page.locator("xpath=//input[@name='username']").fill(username)
         page.locator("xpath=//input[@name='password']").fill(password)

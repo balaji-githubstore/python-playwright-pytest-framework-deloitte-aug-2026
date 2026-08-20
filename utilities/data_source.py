@@ -16,3 +16,6 @@ class DataSource:
 
     data_invalid_login_csv = data_reader.get_csv_into_list(
         os.path.join(Config.DATA_DIR, "test_invalid_login.csv"))
+
+    data_invalid_login_excel = data_reader.get_excel_sheet_into_list(
+        os.path.join(Config.DATA_DIR, "orange_hrm_data.xlsx"), "test_invalid_login")
