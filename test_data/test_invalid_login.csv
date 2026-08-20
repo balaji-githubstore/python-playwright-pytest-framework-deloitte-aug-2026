@@ -1,0 +1,3 @@
+username;password;expected_error
+jack;jack123;Invalid credentials
+peter;peter123;Invalid credentials
