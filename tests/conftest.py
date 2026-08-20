@@ -15,5 +15,7 @@ def page(browser):
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://opensource-demo.orangehrmlive.com/")
+    # page.set_default_timeout(50000)
+    expect.set_options(30000)
     yield page
     page.close()
