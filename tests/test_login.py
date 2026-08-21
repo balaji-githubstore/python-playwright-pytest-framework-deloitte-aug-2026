@@ -7,6 +7,8 @@ from pages.dashboard_page import DashboardPage
 
 class TestLogin:
 
+    @pytest.mark.smoke
+    @pytest.mark.regression
     @pytest.mark.parametrize("username, password, expected_error", DataSource.data_invalid_login_excel)
     def test_invalid_login(self, page: Page,logger, username, password, expected_error):
         login = LoginPage(page)
@@ -21,6 +23,7 @@ class TestLogin:
         expect(login.get_invalid_login_error_locator()
                ).to_have_text(expected_error)
 
+    @pytest.mark.regression
     @pytest.mark.parametrize("username,password,expected_text", DataSource.data_valid_login)
     def test_valid_login(self, page: Page, username, password, expected_text):
         login = LoginPage(page)
