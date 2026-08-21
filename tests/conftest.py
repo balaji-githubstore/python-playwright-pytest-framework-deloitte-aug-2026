@@ -96,3 +96,4 @@ def pytest_runtest_makereport(item, call):
             page.screenshot(
                 path=f"screenshots/{item.name}_{timestamp}.png"
             )
+
