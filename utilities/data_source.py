@@ -10,7 +10,6 @@ class DataSource:
     ]
 
     data_valid_login = [
-        ["Admin", "admin123", "Quick Launch"],
         ["Admin", "admin123", "Quick Launch"]
     ]
 
