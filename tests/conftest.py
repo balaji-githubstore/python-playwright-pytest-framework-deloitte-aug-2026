@@ -68,11 +68,24 @@ def browser(logger):
 def page(browser,logger):
     logger.info("Opening OrangeHRM application")
     context = browser.new_context()
+
+    context.tracing.start(
+        screenshots=True,
+        snapshots=True,
+        sources=True
+    )
+
     page = context.new_page()
     page.goto("https://opensource-demo.orangehrmlive.com/")
     # page.set_default_timeout(50000)
     expect.set_options(30000)
     yield page
+
+    context.tracing.stop(
+        path="traces/test_trace.zip"
+    )
+
+    context.close()
     logger.info("Closing page")
     page.close()
 
