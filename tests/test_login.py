@@ -8,12 +8,16 @@ from pages.dashboard_page import DashboardPage
 class TestLogin:
 
     @pytest.mark.parametrize("username, password, expected_error", DataSource.data_invalid_login_excel)
-    def test_invalid_login(self, page: Page, username, password, expected_error):
+    def test_invalid_login(self, page: Page,logger, username, password, expected_error):
         login = LoginPage(page)
+        logger.info(f"Enter username {username}")
         login.enter_username(username)
+        logger.info(f"Enter password {password}")
         login.enter_password(password)
+        logger.info(f"Click on Login")
         login.click_login()
 
+        logger.info(f"Validating the error message: {expected_error}")
         expect(login.get_invalid_login_error_locator()
                ).to_have_text(expected_error)
 
